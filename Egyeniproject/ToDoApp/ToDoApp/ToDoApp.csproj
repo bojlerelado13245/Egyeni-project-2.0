@@ -68,4 +68,23 @@
       <Folder Include="Models\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <MauiXaml Update="Views\Login.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="Views\Register.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Login.xaml.cs">
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Register.xaml.cs">
+        <DependentUpon>Register.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
 </Project>

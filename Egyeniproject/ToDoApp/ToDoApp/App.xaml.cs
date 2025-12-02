@@ -1,14 +1,17 @@
-﻿namespace ToDoApp;
+﻿using ToDoApp.Views;
+using ToDoApp.ViewModels;
+using ToDoApp.Services;
+
+namespace ToDoApp;
 
 public partial class App : Application
 {
     public App()
     {
         InitializeComponent();
-    }
 
-    protected override Window CreateWindow(IActivationState? activationState)
-    {
-        return new Window(new AppShell());
+        var navigationService = new NavigationService();
+        var loginVM = new LoginViewModel(navigationService);
+        MainPage = new NavigationPage(new Login(loginVM));
     }
 }

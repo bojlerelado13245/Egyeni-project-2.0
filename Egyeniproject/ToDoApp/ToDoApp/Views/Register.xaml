@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ToDoApp.Views.Register"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="*,Auto,*" ColumnDefinitions="*">
+        <VerticalStackLayout
+            Grid.Row="1"
+            Padding="30"
+            Spacing="20"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="300">
+
+            <Label Text="Register"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="Emailfield"
+                   Placeholder="Enter Email"
+                   HorizontalOptions="Fill"
+                   ClearButtonVisibility="WhileEditing" />
+
+            <Entry x:Name="Usernamefield"
+                   Placeholder="Enter username"
+                   HorizontalOptions="Fill"
+                   ClearButtonVisibility="WhileEditing" />
+
+            <Entry x:Name="Passwordfield"
+                   Placeholder="Enter password"
+                   HorizontalOptions="Fill"
+                   IsPassword="True"
+                   ClearButtonVisibility="WhileEditing" />
+
+            <Button Text="Sign up"
+                    HorizontalOptions="Fill"
+
+                    TextColor="White"
+                    CornerRadius="12" />
+
+            <Label Text="Already have an account?"
+                   FontSize="12"
+                   HorizontalOptions="Center" />
+
+            <Button Text="Go back to Login"
+                    Command="{Binding GoToLoginCommand}"
+                    HorizontalOptions="Fill"
+
+                    TextColor="White"
+                    CornerRadius="12" />
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

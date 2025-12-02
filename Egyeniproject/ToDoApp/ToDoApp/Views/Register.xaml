@@ -45,6 +45,7 @@
                    FontSize="12"
                    HorizontalOptions="Center" />
 
+            
             <Button Text="Go back to Login"
                     Command="{Binding GoToLoginCommand}"
                     HorizontalOptions="Fill"

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     x:Class="ToDoApp.Register"
+     NavigationPage.HasNavigationBar="False">
+
+    
+
+    <Grid RowDefinitions="*,Auto,*"
+          ColumnDefinitions="*">
+
+        <!-- Middle section -->
+        <VerticalStackLayout
+            Grid.Row="1"
+            Padding="30"
+            Spacing="20"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="300">
+
+            <Label
+                Text="Register"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource PrimaryTextColor}" />
+            
+            <Entry
+                x:Name="Emailfield"
+                Placeholder="Enter Email"
+                HorizontalOptions="Fill"
+                ClearButtonVisibility="WhileEditing" />
+            
+            <Entry
+                x:Name="Usernamefield"
+                Placeholder="Enter username"
+                HorizontalOptions="Fill"
+                ClearButtonVisibility="WhileEditing" />
+            <Entry
+                x:Name="Passwordfield"
+                Placeholder="Enter password"
+                HorizontalOptions="Fill"
+                IsPassword="True"
+                ClearButtonVisibility="WhileEditing" />
+
+            <Button
+                x:Name="Registerbt" 
+                Text="Sign up"
+                Clicked="OnSubmitClicked"
+                HorizontalOptions="Fill"
+                BackgroundColor="{DynamicResource PrimaryColor}"
+                TextColor="White"
+                CornerRadius="12" />
+
+            <Label
+                Text="Already have an account?"
+                FontSize="12"
+              
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource PrimaryTextColor}" />
+
+            <Button
+                x:Name="tologbt" 
+                Text="Go to login"
+                Clicked="OnLogClicked"
+
+                HorizontalOptions="Fill"
+                BackgroundColor="{DynamicResource PrimaryColor}"
+                TextColor="White"
+                CornerRadius="12" />
+
+           
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

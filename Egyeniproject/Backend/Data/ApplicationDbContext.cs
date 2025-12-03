@@ -8,5 +8,5 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<Players> Players { get; set; }
+    public DbSet<Users> Users { get; set; }
 }

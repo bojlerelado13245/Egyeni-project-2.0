@@ -1,3 +1,5 @@
+using Microsoft.Maui.Controls;
+
 namespace ToDoApp.Services;
 
 public class NavigationService
@@ -7,8 +9,16 @@ public class NavigationService
         await Application.Current.MainPage.Navigation.PushAsync(page);
     }
 
+    public void SetMainPage(Page page)
+    {
+        Application.Current.MainPage = new NavigationPage(page);
+    }
+
     public async Task GoBack()
     {
-        await Application.Current.MainPage.Navigation.PopAsync();
+        if (Application.Current.MainPage.Navigation.NavigationStack.Count > 1)
+        {
+            await Application.Current.MainPage.Navigation.PopAsync();
+        }
     }
 }

@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 
 // Add EF Core with SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=players.db"));
+    options.UseSqlite("Data Source=users.db"));
 
 var app = builder.Build();
 
@@ -20,7 +20,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.EnsureCreated(); // creates DB & tables if they don't exist
+    db.Database.Migrate();
+
 }
 
 // Configure the HTTP request pipeline

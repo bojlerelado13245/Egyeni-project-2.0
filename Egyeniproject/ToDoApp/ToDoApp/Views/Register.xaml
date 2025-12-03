@@ -26,13 +26,14 @@
                    ClearButtonVisibility="WhileEditing" />
 
             <Entry x:Name="Usernamefield"
-                   Text="{Binding _Password}"
+                   Text="{Binding _Username}"
                    Placeholder="Enter username"
                    HorizontalOptions="Fill"
                    ClearButtonVisibility="WhileEditing" />
 
             <Entry x:Name="Passwordfield"
-                   Text="{Binding _Username}"
+                   Text="{Binding _Password}"
+                   
                    Placeholder="Enter password"
                    HorizontalOptions="Fill"
                    IsPassword="True"

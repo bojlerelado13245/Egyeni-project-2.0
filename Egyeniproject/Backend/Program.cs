@@ -10,7 +10,7 @@ builder.Services.AddSwaggerGen();
 
 // Add EF Core with SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=users.db"));
+    options.UseSqlite("Data Source=database.db"));
 
 var app = builder.Build();
 

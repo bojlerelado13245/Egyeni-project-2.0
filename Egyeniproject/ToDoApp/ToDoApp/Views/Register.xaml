@@ -20,16 +20,20 @@
                    HorizontalOptions="Center" />
 
             <Entry x:Name="Emailfield"
+                   Text="{Binding _Email}"
                    Placeholder="Enter Email"
                    HorizontalOptions="Fill"
                    ClearButtonVisibility="WhileEditing" />
 
             <Entry x:Name="Usernamefield"
+                   Text="{Binding _Username}"
                    Placeholder="Enter username"
                    HorizontalOptions="Fill"
                    ClearButtonVisibility="WhileEditing" />
 
             <Entry x:Name="Passwordfield"
+                   Text="{Binding _Password}"
+                   
                    Placeholder="Enter password"
                    HorizontalOptions="Fill"
                    IsPassword="True"
@@ -37,7 +41,7 @@
 
             <Button Text="Sign up"
                     HorizontalOptions="Fill"
-
+                    Command="{Binding RegisterCommand}"
                     TextColor="White"
                     CornerRadius="12" />
 

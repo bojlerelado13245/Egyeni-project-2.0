@@ -1,0 +1,38 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApp.Views.CardCreate"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid > <!-- Left border auto width, right cards fill -->
+
+        
+        <!-- Kartya csinalas -->
+        <Grid ColumnDefinitions="1*,3*,1*" RowDefinitions="0.2*,Auto,0.2*,Auto,0.5*">
+            <Label Text="Task name" Grid.Column="1" Grid.Row="0" FontSize="26" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry Placeholder="Enter task name here" Grid.Column="1" Grid.Row="1"/>
+            
+            <Label Text="Task description" Grid.Column="1" Grid.Row="2" FontSize="26" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Entry Placeholder="Enter task description here" Grid.Column="1" Grid.Row="3" />
+            
+            <HorizontalStackLayout VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   Grid.Column="1" Grid.Row="4">
+                <Button Text="Create"
+                        HorizontalOptions="EndAndExpand"
+                        TextColor="White"
+                        FontSize="20"
+                        WidthRequest="120"
+                        Margin="5,10,5,10"/>
+                <Button Text="Cancel"
+                        Command="{Binding CancelNewTask}"
+                        HorizontalOptions="EndAndExpand"
+                        TextColor="White"
+                        FontSize="20"
+                        WidthRequest="120"
+                        Margin="5,10,5,10"/>
+            </HorizontalStackLayout>
+        </Grid>
+        
+        
+    </Grid>
+</ContentPage>

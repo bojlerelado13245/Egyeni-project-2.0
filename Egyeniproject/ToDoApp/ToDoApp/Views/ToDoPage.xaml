@@ -6,22 +6,44 @@
     <Grid ColumnDefinitions="1*,5*"> <!-- Left border auto width, right cards fill -->
 
         <!-- Left black border -->
-        <Border Opacity="0.5"
-                Grid.Column="0"
-                BackgroundColor="Black"
-                StrokeThickness="0"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill"/>
+        <Border
+            StrokeThickness="0"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            >
+            <VerticalStackLayout
+                VerticalOptions="Start"
+                HorizontalOptions="Center"
+                Margin="10">
 
-        <!-- Right side cards -->
-        <ScrollView Grid.Column="1"> <!-- Scrollable if many cards -->
+                <Button Text="New"
+                        HorizontalOptions="EndAndExpand"
+                        Command="{Binding NewTask}"
+                        TextColor="White"
+                        FontSize="20"
+                        WidthRequest="120"
+                        Margin="5,10,5,10"/>
+            </VerticalStackLayout>
+        </Border>
+        <BoxView
+            WidthRequest="1"
+            HorizontalOptions="End"
+            VerticalOptions="Fill"
+            BackgroundColor="Gray"/>
+        
+        
+        
+        <!-- kartyak -->
+        <ScrollView Grid.Column="1"> 
             <FlexLayout
                 VerticalOptions="Start"
                 Direction="Row"
                 Wrap="Wrap"
                 AlignItems="Start"
                 JustifyContent="Start"
-                Margin="10">
+                Margin="10"
+                
+                >
 
                 <!-- Example card -->
                 <Border

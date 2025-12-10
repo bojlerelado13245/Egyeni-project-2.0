@@ -4,25 +4,24 @@ using System.Windows.Input;
 using ToDoApp.Models;
 using ToDoApp.Services;
 using ToDoApp.Views;
-
 namespace ToDoApp.ViewModels;
 
-public class ToDoPageViewModel
+public class CardCreateViewModel
 {
     private readonly NavigationService _navigation;
     private readonly HttpClient _httpClient;
 
-    public ToDoPageViewModel(NavigationService navigation)
+    public CardCreateViewModel(NavigationService navigation)
     {
         _navigation = navigation;
         _httpClient = new HttpClient();
 
-        NewTask = new Command(async () =>
+        CancelNewTask = new Command(async () =>
         {
-            await _navigation.NavigateTo(new CardCreate(new CardCreateViewModel(_navigation)));
+            await _navigation.NavigateTo(new ToDoPage(new ToDoPageViewModel(_navigation)));
         });
         
     }
 
-    public ICommand NewTask { get; }
+    public ICommand CancelNewTask { get; }
 }

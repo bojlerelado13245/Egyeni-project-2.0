@@ -65,7 +65,7 @@ public class LoginViewModel
             string json = JsonSerializer.Serialize(newData, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(filePath, json);
             
-            await _navigation.NavigateTo(new ToDoPage(new ToDoPageViewModel()));
+            await _navigation.NavigateTo(new ToDoPage(new ToDoPageViewModel(_navigation)));
         }
         catch (Exception ex)
         {

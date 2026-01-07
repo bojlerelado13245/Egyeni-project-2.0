@@ -26,7 +26,10 @@ public class LoginViewModel
         
         
     }
-
+    public void SaveCard()
+    {
+        MessengerService.SendRefresh();
+    }
     public string Username { get; set; }
     public string Password { get; set; }
 
@@ -35,6 +38,8 @@ public class LoginViewModel
 
     private async Task Login()
     {
+       
+        
         if (string.IsNullOrWhiteSpace(Username) || string.IsNullOrWhiteSpace(Password))
         {
             await Application.Current.MainPage.DisplayAlert("Error", "Fill all fields", "OK");
@@ -64,12 +69,13 @@ public class LoginViewModel
             var newData = new { id = matched.Id.ToString(), userName = matched.UserName };
             string json = JsonSerializer.Serialize(newData, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(filePath, json);
-            
+            SaveCard();
             await _navigation.NavigateTo(new ToDoPage(new ToDoPageViewModel(_navigation)));
         }
         catch (Exception ex)
         {
             await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
         }
+        
     }
 }

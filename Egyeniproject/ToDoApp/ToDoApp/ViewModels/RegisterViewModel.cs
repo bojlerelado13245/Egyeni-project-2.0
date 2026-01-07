@@ -50,26 +50,26 @@ public class RegisterViewModel
             Password = _Password,
         };
 
-        try
-        {
-            string url = "http://localhost:5093/api/Users";
-
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, user);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                await Application.Current.MainPage.DisplayAlert("Success", "User registered!", "OK");
-                await _navigation.NavigateTo(new Login(new LoginViewModel(_navigation)));
+                string url = "http://localhost:5093/api/Users";
+
+                HttpResponseMessage response = await _httpClient.PostAsJsonAsync(url, user);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Success", "User registered!", "OK");
+                    await _navigation.NavigateTo(new Login(new LoginViewModel(_navigation)));
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", $"Failed to add user. Status: {response.StatusCode}", "OK");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", $"Failed to add user. Status: {response.StatusCode}", "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", $"Exception: {ex.Message}", "OK");
             }
-        }
-        catch (Exception ex)
-        {
-            await Application.Current.MainPage.DisplayAlert("Error", $"Exception: {ex.Message}", "OK");
-        }
 
     }
     

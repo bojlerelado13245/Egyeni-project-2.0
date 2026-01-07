@@ -71,7 +71,6 @@ public class ToDoPageViewModel
         if (task == null) return;
         
         await _httpClient.PatchAsync($"http://localhost:5093/api/tasks/{task.Id}/done", null);
-        
         task.IsDone = true;
     }
 

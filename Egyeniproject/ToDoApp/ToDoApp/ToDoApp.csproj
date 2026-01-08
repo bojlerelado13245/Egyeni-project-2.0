@@ -71,6 +71,12 @@
       <MauiXaml Update="Views\Register.xaml">
         <SubType>Designer</SubType>
       </MauiXaml>
+      <MauiXaml Update="Views\ToDoPage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="Views\CardCreate.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
     </ItemGroup>
 
     <ItemGroup>
@@ -79,6 +85,14 @@
       </Compile>
       <Compile Update="Views\Register.xaml.cs">
         <DependentUpon>Register.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\ToDoPage.xaml.cs">
+        <DependentUpon>MainPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\CardCreate.xaml.cs">
+        <DependentUpon>CardCreate.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>

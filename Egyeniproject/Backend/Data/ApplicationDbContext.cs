@@ -8,5 +8,7 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    //itt adom hozza a tablat
     public DbSet<Users> Users { get; set; }
+    public DbSet<Tasks> Tasks { get; set; }
 }
